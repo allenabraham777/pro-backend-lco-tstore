@@ -8,9 +8,14 @@ info:
     url: allenkabraham.me
 
 servers:
-  - url: "{protocol}://localhost:3001/api/{version}"
+  - url: "{protocol}://{domain}/api/{version}"
     description: The local dev environment
     variables:
+      domain:
+        enum:
+          - localhost:3001
+          - lco-t-store.herokuapp.com
+        default: localhost:3001
       version:
         enum:
           - v1
